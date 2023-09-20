@@ -26,7 +26,7 @@ export const Register = () => {
                 }
             }
             )
-
+            console.log(response)
             if (!response.ok || response.error) {
                 return setError('Invalid email or password')
             }
