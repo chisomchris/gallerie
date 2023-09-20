@@ -26,16 +26,14 @@ export const Register = () => {
                 }
             }
             )
-            console.log(response)
             if (!response.ok || response.error) {
                 return setError('Invalid email or password')
             }
-            if (!response.ok && response.status === 209) {
+            if (response.status === 209) {
                 return setError('User already exist')
             }
-
-            if (response.ok) {
-                router.push('/auth/login')
+            if (response.status === 201) {
+                return router.push('/auth/login')
             }
         } catch (error) {
             setError(error?.message || 'An error occured')
