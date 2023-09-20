@@ -57,10 +57,11 @@ export const Login = () => {
                 }}>
                     <Input name='email' type={'email'} formik={formik} />
                     <PasswordInput name='password' formik={formik} />
+                    <p className="pt-6 pb-4"><Link href='/auth/forgot-password' className="text-right font-[500] text-pink-700">Forgot passwrod</Link></p>
                     {error && <p className="text-red-500">{error}</p>}
                     <Button label={'Login'} loading={loading} />
                 </form>
-                <p className="pt-6">New to Gallerie? <Link href='/register' className="ml-2 font-[500] text-pink-700">Create an account</Link></p>
+                <p className="pt-6 pb-4">New to Gallerie? <Link href='/register' className="ml-2 font-[500] text-pink-700">Create an account</Link></p>
             </div>
         </div>
     )

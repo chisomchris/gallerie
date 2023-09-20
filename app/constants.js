@@ -59,7 +59,7 @@ export const photos = [
   },
   {
     id: 15,
-    src: "/kevin-mueller-Q-fL04RhuMg-unsplash",
+    src: "/kevin-mueller-Q-fL04RhuMg-unsplash.jpg",
     tags: ["galaxy", "sports"],
   },
   {

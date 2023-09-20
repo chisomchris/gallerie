@@ -5,8 +5,10 @@ import { useState } from "react"
 import { Input, PasswordInput } from "@/app/components/Inputs"
 import Link from "next/link"
 import { Button } from "@/app/components/Button"
+import { useRouter } from "next/navigation"
 
 export const Register = () => {
+    const router = useRouter()
     const [error, setError] = useState('')
     const [loading, setLoading] = useState(false)
     const onSubmit = async (values) => {
@@ -27,6 +29,13 @@ export const Register = () => {
 
             if (!response.ok || response.error) {
                 setError('Invalid email or password')
+            }
+            if (!response.ok && response.status === 209) {
+                setError('User already exist')
+            }
+
+            if (response.ok) {
+                router.push('/auth/login')
             }
         } catch (error) {
             setError(error?.message || 'An error occured')
@@ -54,8 +63,8 @@ export const Register = () => {
                     if (error) { setError('') }
                 }}>
                     <Input name='email' type={'email'} formik={formik} placeholder='example@gmail.com' aria-label='Email address' />
-                    <PasswordInput name='password' type={'password'} formik={formik} placeholder='password' aria-label='password' />
-                    <PasswordInput name='confirm_password' type={'confirm_password'} formik={formik} placeholder='confirm password' aria-label='confirm password' />
+                    <PasswordInput name='password' formik={formik} placeholder='password' aria-label='password' />
+                    <PasswordInput name='confirm_password' formik={formik} placeholder='confirm password' aria-label='confirm password' />
                     {error && <p className="text-red-500">{error}</p>}
                     <Button label={'Register'} loading={loading} />
                 </form>
