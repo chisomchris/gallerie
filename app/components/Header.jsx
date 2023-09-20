@@ -18,7 +18,7 @@ export const Header = () => {
     return (
         <header className='shadow-md sticky top-0 bg-white left-0'>
             <div className='wrapper flex items-center'>
-                <h1 className='font-bold text-3xl italic mr-6 flex flex-nowrap'><span className='text-pink-700 text-5xl'>G</span><span className='hidden min-[420px]:inline-block'>allerie</span></h1>
+                <h1 className='font-bold text-3xl italic mr-6 flex flex-nowrap items-center'><span className='text-pink-700 text-5xl'>G</span><span className='hidden min-[420px]:inline-block'>allerie</span></h1>
                 <input type='search' onChange={onChange} value={filter} placeholder='Search Here...' className='ml-auto px-4 py-1 w-full border-[1px] border-[#3333] border-solid outline-none focus:border-[#333e] sm:w-fit md:mr-auto' />
                 <button className='ml-2 px-2 py-2 rounded-sm active:bg-pink-100 focus:bg-pink-100 md:hidden'><FaBars className='text-pink-700 text-2xl' onClick={onClick} /></button>
                 <div className='hidden ml-8 md:flex md:gap-4 md:items-center'>
