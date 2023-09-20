@@ -7,7 +7,7 @@ export const Header = () => {
     return (
         <header className='shadow-md sticky top-0 bg-white left-0'>
             <div className='wrapper flex items-center justify-between gap-8'>
-                <h1 className='font-bold text-3xl'>Gallerie</h1>
+                <h1 className='font-bold text-3xl italic'><span className='text-pink-700 text-5xl'>G</span><span className='hidden min-[420px]:inline-block'>allerie</span></h1>
                 <input type='search' onChange={onChange} value={filter} placeholder='Search Here...' className='px-4 py-1 w-full border-[1px] border-[#3333] border-solid outline-none focus:border-[#333e] sm:w-fit' />
             </div>
         </header>

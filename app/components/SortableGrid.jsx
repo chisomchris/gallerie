@@ -38,7 +38,7 @@ const Card = ({ src, tags }) => {
     return (
         <div className='shadow-lg reletive'>
             <div className={` w-full aspect-[5/3] bg-[#3338]`} >
-            <Image src={src} alt={tags.join(' ')} width={400} height={200} className={`w-full aspect-[5/3]`} onLoad={(e) => { setLoaded(true) }} />
+            <Image src={src} alt={tags.join(' ')} width={400} height={200} className={`w-full aspect-[5/4] object-center object-cover`} onLoad={(e) => { setLoaded(true) }} />
             </div>
             <div>
                 <ul className='flex items-center flex-wrap px-1 py-3 gap-4'>
