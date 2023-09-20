@@ -28,10 +28,10 @@ export const Register = () => {
             )
 
             if (!response.ok || response.error) {
-                setError('Invalid email or password')
+                return setError('Invalid email or password')
             }
             if (!response.ok && response.status === 209) {
-                setError('User already exist')
+                return setError('User already exist')
             }
 
             if (response.ok) {
